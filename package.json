@@ -11,6 +11,8 @@
     "core-js": "^3.8.3",
     "express": "^4.18.2",
     "firebase": "^9.15.0",
+    "flowbite": "^1.6.0",
+    "flowbite-vue": "^0.0.10",
     "vue": "^3.2.13",
     "vue-router": "^4.1.6"
   },

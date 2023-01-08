@@ -1,10 +1,16 @@
 <template>
     <Navbar></Navbar>
+    <Sidebar/>
+
 </template>
 
 <script>
 
 import Navbar from './Navbar';
+import Footer from './Footer';
+import Sidebar from './Sidebar';
+
+
 
 export default {
 
@@ -15,7 +21,7 @@ export default {
     },
 
     components : {
-        Navbar,
+        Navbar,Footer,Sidebar
     },
 
     methods: {

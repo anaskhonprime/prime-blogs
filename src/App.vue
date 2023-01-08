@@ -1,5 +1,5 @@
 <template>
-  <router-view></router-view>
+  <router-view :category ="category"/>
 </template>
 
 <script>
@@ -7,12 +7,18 @@
 
 import firebase from 'firebase/compat/app'; 
 
+import Data from './data/categories.js';
+
 export default {
   name: 'App',
-  components: {
-    
-  },
+  data() {
+    return {
+      category :  Data,
 
+    }
+  },
+  components: {    
+  },
 }
 </script>
 
