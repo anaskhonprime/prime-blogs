@@ -1,5 +1,5 @@
 <template>
-  <router-view :category ="category"/>
+  <router-view :category ="category"></router-view>
 </template>
 
 <script>
@@ -14,7 +14,6 @@ export default {
   data() {
     return {
       category :  Data,
-
     }
   },
   components: {    
