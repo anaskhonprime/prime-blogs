@@ -1,18 +1,18 @@
 <template>
   <div class="flex">
     <aside class="flex w-96 sticky left-0 top-0 h-full" aria-label="Sidebar">
-      <div class="md:order-2">
+      <div class="max-w-24">
         <button
           data-collapse-toggle="categories"
           type="button"
-          class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          class="inline-flex items-center p-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
           aria-controls="categories"
           aria-expanded="false"
         >
           <span class="sr-only">Open Categories</span>
           <svg
             aria-hidden="true"
-            class="flex-shrink-0 ml-3 mt-3 w-7 h-7 text-purple-400 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+            class="flex-shrink-0 w-7 h-7 text-purple-400 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
             fill="currentColor"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
@@ -170,6 +170,7 @@
                 ></path>
               </svg>
             </button>
+
             <div
               id="social"
               class="z-10 hidden ml-5 mb-5 bg-purple-50 divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700"
@@ -300,19 +301,287 @@
     </aside>
 
     <main class="">
-      <div class="container my-10 mx-auto px-4 md:px-0">
+      <div class="hidden md:flex md:order-1 mt-6">
+        <button
+          id="dropdownDefaultButton"
+          data-dropdown-toggle="dropdown"
+          class="text-orange-900 mr-5 bg-orange-100 hover:bg-orange-200 focus:ring-4 focus:outline-none focus:ring-orange-200 font-medium rounded-lg text-md px-10 py-2.5 text-center inline-flex items-center dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-800"
+          type="button"
+        >
+          All Blogs
+          <svg
+            class="w-5 h-5 ml-3"
+            aria-hidden="true"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z"
+            ></path>
+          </svg>
+        </button>
+
+        <button
+          id="dropdownDefaultButton"
+          data-dropdown-toggle="dropdown"
+          class="text-red-900 mr-5 bg-red-100 hover:bg-red-200 focus:ring-4 focus:outline-none focus:ring-red-200 font-medium rounded-lg text-md px-10 py-2.5 text-center inline-flex items-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
+          type="button"
+        >
+          Hot Trends
+          <svg
+            class="w-5 h-5 ml-3"
+            aria-hidden="true"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z"
+            ></path>
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z"
+            ></path>
+          </svg>
+        </button>
+
+        <button
+          id="dropdownDefaultButton"
+          data-dropdown-toggle="dropdown"
+          class="text-green-900 mr-5 bg-green-100 hover:bg-green-200 focus:ring-4 focus:outline-none focus:ring-green-200 font-medium rounded-lg text-md px-10 py-2.5 text-center inline-flex items-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+          type="button"
+        >
+          New Blogs
+          <svg
+            class="w-5 h-5 ml-3"
+            aria-hidden="true"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z"
+            ></path>
+          </svg>
+        </button>
+
+        <button
+          id="dropdownDefaultButton"
+          data-dropdown-toggle="dropdown"
+          class="text-blue-900 bg-blue-100 hover:bg-blue-200 focus:ring-4 focus:outline-none focus:ring-blue-200 font-medium rounded-lg text-md px-10 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          type="button"
+        >
+          Popular
+          <svg
+            class="w-5 h-5 ml-3"
+            aria-hidden="true"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+
+      <div class="container my-10 mr-3 pr-3 md:px-0">
         <div
           href=""
-          class="flex items-center p-2 text-2xl font-bold text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+          class="flex items-center p-2 text-2xl font-bold text-purple-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
         >
+          <svg
+            class="w-6 h-6 mr-3"
+            aria-hidden="true"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M18.375 12.739l-7.693 7.693a4.5 4.5 0 01-6.364-6.364l10.94-10.94A3 3 0 1119.5 7.372L8.552 18.32m.009-.01l-.01.01m5.699-9.941l-7.81 7.81a1.5 1.5 0 002.112 2.13"
+            ></path>
+          </svg>
+
           <span class="">Hot Trends</span>
         </div>
 
-        <div class="flex flex-wrap max-w-6xl md:max-w-6xl -mx-1 lg:-mx-4">
+        <div class="flex flex-wrap max-w-6xl md:max-w-8xl -mx-1 lg:-mx-4">
           <!-- Column -->
           <div
-            v-for="a in 6"
-            class="my-1 px-1 md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3"
+            v-for="a in 3"
+            class="my-1 px-1 md:w-1/2 md:max-w-8xl lg:my-4 lg:px-4 lg:w-1/3"
+          >
+            <!-- Article -->
+            <article class="overflow-hidden rounded-lg shadow-lg">
+              <a href="#">
+                <img
+                  alt="Placeholder"
+                  class="block h-auto w-full"
+                  src="https://picsum.photos/600/400/?random"
+                />
+              </a>
+
+              <header
+                class="flex items-center justify-between leading-tight p-2 md:p-4"
+              >
+                <h1 class="text-lg">
+                  <a class="no-underline hover:underline text-black" href="#">
+                    Article Title
+                  </a>
+                </h1>
+                <p class="text-grey-darker text-sm">11/1/19</p>
+              </header>
+
+              <footer
+                class="flex items-center justify-between leading-none p-2 md:p-4"
+              >
+                <a
+                  class="flex items-center no-underline hover:underline text-black"
+                  href="#"
+                >
+                  <img
+                    alt="Placeholder"
+                    class="block rounded-full"
+                    src="https://picsum.photos/32/32/?random"
+                  />
+                  <p class="ml-2 text-sm">Author Name</p>
+                </a>
+                <a
+                  class="no-underline text-grey-darker hover:text-red-dark"
+                  href="#"
+                >
+                  <span class="hidden">Like</span>
+                  <i class="fa fa-heart"></i>
+                </a>
+              </footer>
+            </article>
+            <!-- END Article -->
+          </div>
+          <!-- END Column -->
+        </div>
+
+        <div
+          href=""
+          class="flex items-center p-2 mt-10 text-2xl font-bold text-blue-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+        >
+          <svg
+            class="w-6 h-6 mr-3"
+            aria-hidden="true"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M18.375 12.739l-7.693 7.693a4.5 4.5 0 01-6.364-6.364l10.94-10.94A3 3 0 1119.5 7.372L8.552 18.32m.009-.01l-.01.01m5.699-9.941l-7.81 7.81a1.5 1.5 0 002.112 2.13"
+            ></path>
+          </svg>
+
+          <span class="">New Blogs</span>
+        </div>
+
+        <div class="flex flex-wrap max-w-6xl md:max-w-8xl -mx-1 lg:-mx-4">
+          <!-- Column -->
+          <div
+            v-for="a in 3"
+            class="my-1 px-1 md:w-1/2 md:max-w-8xl lg:my-4 lg:px-4 lg:w-1/3"
+          >
+            <!-- Article -->
+            <article class="overflow-hidden rounded-lg shadow-lg">
+              <a href="#">
+                <img
+                  alt="Placeholder"
+                  class="block h-auto w-full"
+                  src="https://picsum.photos/600/400/?random"
+                />
+              </a>
+
+              <header
+                class="flex items-center justify-between leading-tight p-2 md:p-4"
+              >
+                <h1 class="text-lg">
+                  <a class="no-underline hover:underline text-black" href="#">
+                    Article Title
+                  </a>
+                </h1>
+                <p class="text-grey-darker text-sm">11/1/19</p>
+              </header>
+
+              <footer
+                class="flex items-center justify-between leading-none p-2 md:p-4"
+              >
+                <a
+                  class="flex items-center no-underline hover:underline text-black"
+                  href="#"
+                >
+                  <img
+                    alt="Placeholder"
+                    class="block rounded-full"
+                    src="https://picsum.photos/32/32/?random"
+                  />
+                  <p class="ml-2 text-sm">Author Name</p>
+                </a>
+                <a
+                  class="no-underline text-grey-darker hover:text-red-dark"
+                  href="#"
+                >
+                  <span class="hidden">Like</span>
+                  <i class="fa fa-heart"></i>
+                </a>
+              </footer>
+            </article>
+            <!-- END Article -->
+          </div>
+          <!-- END Column -->
+        </div>
+
+        <div
+          href=""
+          class="flex items-center p-2 mt-10 text-2xl font-bold text-blue-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+        >
+          <svg
+            class="w-6 h-6 mr-3"
+            aria-hidden="true"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M18.375 12.739l-7.693 7.693a4.5 4.5 0 01-6.364-6.364l10.94-10.94A3 3 0 1119.5 7.372L8.552 18.32m.009-.01l-.01.01m5.699-9.941l-7.81 7.81a1.5 1.5 0 002.112 2.13"
+            ></path>
+          </svg>
+
+          <span class="">Popular</span>
+        </div>
+
+        <div class="flex flex-wrap max-w-6xl md:max-w-8xl -mx-1 lg:-mx-4">
+          <!-- Column -->
+          <div
+            v-for="a in 3"
+            class="my-1 px-1 md:w-1/2 md:max-w-8xl lg:my-4 lg:px-4 lg:w-1/3"
           >
             <!-- Article -->
             <article class="overflow-hidden rounded-lg shadow-lg">
