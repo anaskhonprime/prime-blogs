@@ -1,7 +1,6 @@
 <template>
     <Navbar></Navbar>
     <Sidebar/>
-   
      
 </template>
 
