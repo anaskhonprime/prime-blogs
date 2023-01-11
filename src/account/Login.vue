@@ -1,6 +1,4 @@
 <template>
-  <Navbar />
-
   <section class="bg-purple-50 dark:bg-gray-900">
     <div
       class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0"
@@ -75,16 +73,25 @@
                 >Forgot password?</a
               >
             </div>
-            <div
-              class="flex items-center my-4 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5"
-            >
-              <p class="text-center font-semibold mx-4 mb-0">Or</p>
+            <div class="flex items-center justify-center">
+              <button
+                type="button"
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-base px-10 mt-2 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+              >
+                Start Now
+              </button>
             </div>
 
             <div
-              class="flex flex-row items-center justify-center lg:justify-start"
+              class="flex items-center my-6 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5"
             >
-              <p class="text-lg mb-0 mr-4">Sign in with</p>
+              <p class="text-center font-medium mx-4 mb-0">OR</p>
+            </div>
+
+            <div
+              class="flex flex-row items-center justify-center lg:justify-center"
+            >
+              <p class="text-medium mb-0 mr-4 hidden lg:flex">Start With</p>
 
               <button
                 type="button"
@@ -139,20 +146,18 @@
               </button>
             </div>
 
-            <button
-              type="submit"
-              class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-            >
-              Sign in
-            </button>
-            <p class="text-sm font-light text-gray-500 dark:text-gray-400">
-              Don’t have an account yet?
-              <a
-                href="#"
-                class="font-medium text-primary-600 hover:underline dark:text-primary-500"
-                >Sign up</a
+            <div class="text-center">
+              <p
+                class="text-sm pr-2 mt-3 font-light text-gray-600 dark:text-gray-400"
               >
-            </p>
+                Don’t have an account yet?
+                <router-link to="/register"
+                  
+                  class="font-bold pl-2 text-primary-600 hover:underline dark:text-primary-500"
+                  >Sign up</router-link
+                >
+              </p>
+            </div>
           </form>
         </div>
       </div>

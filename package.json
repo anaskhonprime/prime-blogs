@@ -14,7 +14,8 @@
     "flowbite": "^1.6.0",
     "flowbite-vue": "^0.0.10",
     "vue": "^3.2.13",
-    "vue-router": "^4.1.6"
+    "vue-router": "^4.1.6",
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
