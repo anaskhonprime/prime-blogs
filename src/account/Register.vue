@@ -14,12 +14,24 @@
         class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700"
       >
         <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
-          <h1
-            class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white"
-          >
-            Registration
-          </h1>
+         
           <form class="space-y-4 md:space-y-6" action="#">
+            <div>
+              <label
+                for="username"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Username</label
+              >
+              <input
+                v-model="username"
+                type="username"
+                name="username"
+                id="username"
+                class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="username"
+                required=""
+              />
+            </div>            
             <div>
               <label
                 for="email"
@@ -27,6 +39,7 @@
                 >Your email</label
               >
               <input
+                v-model="email"
                 type="email"
                 name="email"
                 id="email"
@@ -42,6 +55,7 @@
                 >Password</label
               >
               <input
+                v-model="password"
                 type="password"
                 name="password"
                 id="password"
@@ -51,37 +65,21 @@
               />
             </div>
 
-            <div>
-              <label
-                for="password"
-                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                >Confirm Password</label
-              >
-              <input
-                type="password"
-                name="password"
-                id="password"
-                placeholder="••••••••"
-                class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                required=""
-              />
-            </div>
+           
 
             <div class="flex items-center justify-between">
               <div class="flex items-start">
                
                 
               </div>
-              <a
-                href="#"
-                class="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"
-                >Forgot password?</a
-              >
+              
+              
             </div>
             <div class="flex items-center justify-center">
               <button
+                @click ="register"
                 type="button"
-                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-base px-10 mt-2 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-base px-10  py-2.5 mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
               >
                 Start Now
               </button>
@@ -171,11 +169,43 @@
 </template>
 
 <script>
+
+import firebase from 'firebase/compat/app'; 
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
+
+
 import Navbar from '../components/Navbar'
 export default {
+  data(){
+    return {
+      username : '',
+      email : '',
+      password: '',
+    }
+  },
   components: {
     Navbar
-  }
+  },
+
+  methods: {
+
+    register(){
+      firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(()=>{
+        alert("Congrats, Welcome to the Prime Blogs.");
+        this.$router.replace('login')
+      }).catch((error)=>{
+        var errorCode  = error.code;
+        var errorMessage = error.message;
+        if(errorCode == 'auth/weak-password'){
+          alert(errorMessage);
+        }
+        console.log(error);
+      });
+
+    }
+
+  },
 }
 </script>
 

@@ -27,6 +27,7 @@
                 >Your email</label
               >
               <input
+                v-model="email"
                 type="email"
                 name="email"
                 id="email"
@@ -42,6 +43,7 @@
                 >Password</label
               >
               <input
+                v-model="password"
                 type="password"
                 name="password"
                 id="password"
@@ -75,6 +77,7 @@
             </div>
             <div class="flex items-center justify-center">
               <button
+                @click="login"
                 type="button"
                 class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-base px-10 mt-2 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
               >
@@ -151,8 +154,8 @@
                 class="text-sm pr-2 mt-3 font-light text-gray-600 dark:text-gray-400"
               >
                 Don’t have an account yet?
-                <router-link to="/register"
-                  
+                <router-link
+                  to="/register"
                   class="font-bold pl-2 text-primary-600 hover:underline dark:text-primary-500"
                   >Sign up</router-link
                 >
@@ -167,9 +170,36 @@
 
 <script>
 import Navbar from '../components/Navbar'
+
+import firebase from 'firebase/compat/app'
+import 'firebase/compat/auth'
+import 'firebase/compat/firestore'
+
+
 export default {
+  data () {
+    return {
+      email: '',
+      password: ''
+    }
+  },
   components: {
     Navbar
+  },
+
+  methods: {
+    login () {
+      firebase
+        .auth()
+        .signInWithEmailAndPassword(this.email, this.password)
+        .then(() => {
+          alert('Login Successfully!')
+          this.$router.replace('admin')
+        })
+        .catch(error => {
+          alert('에러 : ' + err.message)
+        })
+    }
   }
 }
 </script>
