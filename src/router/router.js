@@ -14,6 +14,9 @@ import Display from '../account/Display'
 import Blogs from '../account/Blogs'
 import Drafts from '../account/Drafts'
 
+import UserDashboard from '../account/user/UserDashboard'
+
+
 
 
 const routes = [{
@@ -28,7 +31,13 @@ const routes = [{
     {
         path: '/register',
         component: Register,
-    }, {
+    },
+
+    {
+        path: '/dashboard',
+        component: UserDashboard,
+    },
+    {
         path: '/admin',
         component: Admin,
         children: [{

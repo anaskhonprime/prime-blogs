@@ -90,7 +90,7 @@
       
       
       <div
-        class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+        class="items-center  justify-between hidden w-full md:flex md:w-auto md:order-1"
         id="navbar-search"
       >
         <div class="relative mt-3 md:hidden">

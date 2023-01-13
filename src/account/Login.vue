@@ -169,6 +169,7 @@
 </template>
 
 <script>
+
 import Navbar from '../components/Navbar'
 
 import firebase from 'firebase/compat/app'
