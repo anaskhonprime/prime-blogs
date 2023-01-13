@@ -1,8 +1,10 @@
 import { createWebHistory, createRouter } from "vue-router";
 
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
+
 import Home from '../components/Home'
-
-
 import Login from '../account/Login'
 import Register from '../account/Register'
 import Admin from '../account/Admin'
@@ -15,8 +17,6 @@ import Blogs from '../account/Blogs'
 import Drafts from '../account/Drafts'
 
 import UserDashboard from '../account/user/UserDashboard'
-
-
 
 
 const routes = [{
@@ -36,6 +36,7 @@ const routes = [{
     {
         path: '/dashboard',
         component: UserDashboard,
+        //meta: { requiresAuth: true },
     },
     {
         path: '/admin',
@@ -76,11 +77,26 @@ const routes = [{
 
 ];
 
-
-
 const router = createRouter({
     history: createWebHistory(),
     routes,
 });
+
+
+router.beforeEach((to, from, next) => {
+
+    const requiresAuth = to.matched.some(x => x.meta.requiresAuth)
+    const currentUser = firebase.auth().currentUser
+
+    if (requiresAuth && !currentUser) {
+        next('/login')
+        alert("Please login!")
+
+    } else if (requiresAuth && currentUser) {
+        next()
+    } else {
+        next()
+    }
+})
 
 export default router;

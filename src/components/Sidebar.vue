@@ -279,7 +279,7 @@
               >
                 <div v-for="(a, i) in profile" :key="a">
                   <li>
-                    <router-link to="/admin"
+                    <router-link to="/dashboard"
                       href="#"
                       class="block px-5 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                       >{{ profile[i] }}</router-link

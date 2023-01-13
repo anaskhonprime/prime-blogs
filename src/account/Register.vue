@@ -192,6 +192,7 @@ export default {
 
     register(){
       firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(()=>{
+        console.log('User' + this.email)
         alert("Congrats, Welcome to the Prime Blogs.");
         this.$router.replace('login')
       }).catch((error)=>{

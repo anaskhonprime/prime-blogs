@@ -9,6 +9,8 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 
+
+
 const firebaseConfig = {
     apiKey: "AIzaSyDIdYii98QJzN2I9_LWaBn42WGwbuz3km8",
     authDomain: "vueblog-13514.firebaseapp.com",
@@ -25,5 +27,12 @@ const auth = firebase.auth();
 
 export { auth, db };
 
+/* firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+        // User is signed in.
+    } else {
+        // No user is signed in.
+    }
+}); */
 
 createApp(App).use(router).mount('#app')

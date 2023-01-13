@@ -33,7 +33,7 @@
             </button>
 
             <h4
-              class="text-2xl font-bold leading-tight mt-10  text-green-800 mb-2"
+              class="text-2xl font-bold leading-tight mt-10 text-green-800 mb-2"
             >
               Prime Blogs
             </h4>
@@ -260,9 +260,12 @@
                     <span class="ml-3 text-md font-medium"> Edit Account </span>
                   </a>
 
-                  <form action="/logout">
+                  <form action="">
                     <button
-                      type="submit"
+                     data-modal-target="popup-modal" data-modal-toggle="popup-modal"
+
+                      type="button"
+
                       class="flex items-center w-full px-4 py-2 text-gray-500 rounded-lg hover:bg-gray-100 hover:text-gray-700"
                     >
                       <svg
@@ -373,21 +376,21 @@
           >
             <div class="flex-col flex lg:flex-row items-start lg:items-center">
               <div class="ml-0 my-6 lg:my-0">
-                <h4 class="text-md lg:text-2xl font-bold leading-tight text-white mb-2">
-                 User Dashboard
+                <h4
+                  class="text-md lg:text-2xl font-bold leading-tight text-white mb-2"
+                >
+                  User Dashboard
                 </h4>
                 <p class="flex items-center text-gray-300 text-xs lg:text-sm">
                   <span class="cursor-pointer">User Dashboard</span>
                   <span class="mx-2">&gt;</span>
                   <span class="cursor-pointer">General</span>
-               
-                  
                 </p>
               </div>
             </div>
             <div>
               <button
-                class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-400 mr-3 bg-transparent transition duration-150 ease-in-out rounded hover:bg-green-400 text-white px-5 py-2 font-medium  text-sm lg:text-base border border-white"
+                class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-400 mr-3 bg-transparent transition duration-150 ease-in-out rounded hover:bg-green-400 text-white px-5 py-2 font-medium text-sm lg:text-base border border-white"
               >
                 Back
               </button>
@@ -399,6 +402,83 @@
             </div>
           </div>
         </div>
+
+        <div>
+          
+
+
+
+          <div
+            id="popup-modal"
+            tabindex="-1"
+            class="fixed top-0 left-0 right-0 z-50 hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full"
+          >
+            <div class="relative w-full h-full max-w-md md:h-auto">
+              <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                <button
+                  type="button"
+                  class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
+                  data-modal-hide="popup-modal"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="w-5 h-5"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                  <span class="sr-only">Close modal</span>
+                </button>
+
+                
+                <div class="p-6 text-center">
+                  <svg
+                    aria-hidden="true"
+                    class="mx-auto mb-4 text-gray-400 w-14 h-14 dark:text-gray-200"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                  <h3
+                    class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400"
+                  >
+                    Are You Sure You Want to Sign Out?
+                  </h3>
+                  <button
+                    @click="logout"
+                    data-modal-hide="popup-modal"
+                    type="submit"
+                    class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2"
+                  >
+                    Sign Out
+                  </button>
+                  <button
+                    data-modal-hide="popup-modal"
+                    type="button"
+                    class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600"
+                  >
+                    Never Mind
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- Page title ends -->
         <div class="container px-6 mx-auto">
           <!-- Remove class [ h-64 ] when adding a card block -->
@@ -417,23 +497,40 @@
               <div class="absolute inset-0 overflow-hidden">
                 <!-- Background overlay, show/hide based on slide-over state. -->
                 <div class="absolute inset-0" aria-hidden="true">
-                  <div class="fixed inset-y-0 pl-16 max-w-full right-0 flex">
-                   
-                  </div>
+                  <div
+                    class="fixed inset-y-0 pl-16 max-w-full right-0 flex"
+                  ></div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-       
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+
+import firebase from 'firebase/compat/app'
+import 'firebase/compat/auth'
+import 'firebase/compat/firestore'
+
+export default {
+  methods: {
+    logout () {
+      firebase
+        .auth()
+        .signOut()
+        .then(() => {
+          this.$router.replace('/')
+        })
+        .catch(error => {
+          alert('Error ' + error.message)
+        })
+    }
+  }
+}
 </script>
 
 <style></style>

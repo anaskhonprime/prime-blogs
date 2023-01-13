@@ -1,4 +1,4 @@
-# eth-dapp
+# Prime Blogs
 
 ## Project setup
 ```

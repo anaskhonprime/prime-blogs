@@ -43,6 +43,7 @@
                 >Password</label
               >
               <input
+                @keyup.enter="login"
                 v-model="password"
                 type="password"
                 name="password"
@@ -194,8 +195,9 @@ export default {
         .auth()
         .signInWithEmailAndPassword(this.email, this.password)
         .then(() => {
+          console.log(this.email)
           alert('Login Successfully!')
-          this.$router.replace('admin')
+          this.$router.replace('/dashboard')
         })
         .catch(error => {
           alert('에러 : ' + err.message)
