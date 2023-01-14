@@ -420,13 +420,13 @@
             ></path>
           </svg>
 
-          <span class="">Hot Trends</span>
+          <span class="">All Blogs</span>
         </div>
 
         <div class="flex flex-wrap max-w-6xl md:max-w-8xl -mx-1 lg:-mx-4">
           <!-- Column -->
           <div
-            v-for="a in 3"
+            v-for="a in 15"
             class="my-1 px-1 md:w-1/2 md:max-w-8xl lg:my-4 lg:px-4 lg:w-1/3"
           >
             <!-- Article -->
@@ -478,159 +478,7 @@
           <!-- END Column -->
         </div>
 
-        <div
-          href=""
-          class="flex items-center p-2 mt-10 text-2xl font-bold text-blue-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
-        >
-          <svg
-            class="w-6 h-6 mr-3"
-            aria-hidden="true"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M18.375 12.739l-7.693 7.693a4.5 4.5 0 01-6.364-6.364l10.94-10.94A3 3 0 1119.5 7.372L8.552 18.32m.009-.01l-.01.01m5.699-9.941l-7.81 7.81a1.5 1.5 0 002.112 2.13"
-            ></path>
-          </svg>
-
-          <span class="">New Blogs</span>
-        </div>
-
-        <div class="flex flex-wrap max-w-6xl md:max-w-8xl -mx-1 lg:-mx-4">
-          <!-- Column -->
-          <div
-            v-for="a in 3"
-            class="my-1 px-1 md:w-1/2 md:max-w-8xl lg:my-4 lg:px-4 lg:w-1/3"
-          >
-            <!-- Article -->
-            <article class="overflow-hidden rounded-lg shadow-lg">
-              <a href="#">
-                <img
-                  alt="Placeholder"
-                  class="block h-auto w-full"
-                  src="https://picsum.photos/600/400/?random"
-                />
-              </a>
-
-              <header
-                class="flex items-center justify-between leading-tight p-2 md:p-4"
-              >
-                <h1 class="text-lg">
-                  <a class="no-underline hover:underline text-black" href="#">
-                    Article Title
-                  </a>
-                </h1>
-                <p class="text-grey-darker text-sm">11/1/19</p>
-              </header>
-
-              <footer
-                class="flex items-center justify-between leading-none p-2 md:p-4"
-              >
-                <a
-                  class="flex items-center no-underline hover:underline text-black"
-                  href="#"
-                >
-                  <img
-                    alt="Placeholder"
-                    class="block rounded-full"
-                    src="https://picsum.photos/32/32/?random"
-                  />
-                  <p class="ml-2 text-sm">Author Name</p>
-                </a>
-                <a
-                  class="no-underline text-grey-darker hover:text-red-dark"
-                  href="#"
-                >
-                  <span class="hidden">Like</span>
-                  <i class="fa fa-heart"></i>
-                </a>
-              </footer>
-            </article>
-            <!-- END Article -->
-          </div>
-          <!-- END Column -->
-        </div>
-
-        <div
-          href=""
-          class="flex items-center p-2 mt-10 text-2xl font-bold text-blue-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
-        >
-          <svg
-            class="w-6 h-6 mr-3"
-            aria-hidden="true"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M18.375 12.739l-7.693 7.693a4.5 4.5 0 01-6.364-6.364l10.94-10.94A3 3 0 1119.5 7.372L8.552 18.32m.009-.01l-.01.01m5.699-9.941l-7.81 7.81a1.5 1.5 0 002.112 2.13"
-            ></path>
-          </svg>
-
-          <span class="">Popular</span>
-        </div>
-
-        <div class="flex flex-wrap max-w-6xl md:max-w-8xl -mx-1 lg:-mx-4">
-          <!-- Column -->
-          <div
-            v-for="a in 3"
-            class="my-1 px-1 md:w-1/2 md:max-w-8xl lg:my-4 lg:px-4 lg:w-1/3"
-          >
-            <!-- Article -->
-            <article class="overflow-hidden rounded-lg shadow-lg">
-              <a href="#">
-                <img
-                  alt="Placeholder"
-                  class="block h-auto w-full"
-                  src="https://picsum.photos/600/400/?random"
-                />
-              </a>
-
-              <header
-                class="flex items-center justify-between leading-tight p-2 md:p-4"
-              >
-                <h1 class="text-lg">
-                  <a class="no-underline hover:underline text-black" href="#">
-                    Article Title
-                  </a>
-                </h1>
-                <p class="text-grey-darker text-sm">11/1/19</p>
-              </header>
-
-              <footer
-                class="flex items-center justify-between leading-none p-2 md:p-4"
-              >
-                <a
-                  class="flex items-center no-underline hover:underline text-black"
-                  href="#"
-                >
-                  <img
-                    alt="Placeholder"
-                    class="block rounded-full"
-                    src="https://picsum.photos/32/32/?random"
-                  />
-                  <p class="ml-2 text-sm">Author Name</p>
-                </a>
-                <a
-                  class="no-underline text-grey-darker hover:text-red-dark"
-                  href="#"
-                >
-                  <span class="hidden">Like</span>
-                  <i class="fa fa-heart"></i>
-                </a>
-              </footer>
-            </article>
-            <!-- END Article -->
-          </div>
-          <!-- END Column -->
-        </div>
+        
       </div>
     </main>
   </div>

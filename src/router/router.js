@@ -1,8 +1,11 @@
 import { createWebHistory, createRouter } from "vue-router";
 
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/auth';
-import 'firebase/compat/firestore';
+
+import firebase from "firebase/app";
+import "firebase/firestore";
+import "firebase/auth";
+
+import { db, auth } from '../main.js'
 
 import Home from '../components/Home'
 import Login from '../account/Login'
@@ -15,6 +18,8 @@ import Users from '../account/Allusers'
 import Display from '../account/Display'
 import Blogs from '../account/Blogs'
 import Drafts from '../account/Drafts'
+import Upload from '../account/Upload'
+
 
 import UserDashboard from '../account/user/UserDashboard'
 
@@ -45,6 +50,11 @@ const routes = [{
                 path: 'overview',
                 name: 'overview',
                 component: Overview,
+            },
+            {
+                path: 'upload',
+                name: 'upload',
+                component: Upload,
             },
             {
                 path: 'activity',

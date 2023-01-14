@@ -5,9 +5,13 @@
 <script>
 
 
-import firebase from 'firebase/compat/app'; 
+
+import firebase from "firebase/app";
+
 
 import Data from './data/categories.js';
+
+
 
 export default {
   name: 'App',

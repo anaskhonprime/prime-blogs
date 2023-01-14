@@ -1,5 +1,7 @@
 
- - @keyup.enter="login"
+@keyup.enter="login"
 
-로그인할때 입력하고 바로 Enter 키로 이동 가능한 기능
+ - 로그인할때 입력하고 바로 Enter 키로 이동 가능한 기능
+
+ 
 

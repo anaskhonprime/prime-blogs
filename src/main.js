@@ -4,12 +4,9 @@ import App from './App.vue'
 import router from './router/router.js';
 import './style/tailwind.css';
 
-
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/auth';
-import 'firebase/compat/firestore';
-
-
+import firebase from "firebase/app";
+import "firebase/firestore";
+import "firebase/auth";
 
 const firebaseConfig = {
     apiKey: "AIzaSyDIdYii98QJzN2I9_LWaBn42WGwbuz3km8",
@@ -21,9 +18,9 @@ const firebaseConfig = {
     measurementId: "G-BH06B8ZTFV"
 };
 
-const firebaseApp = firebase.initializeApp(firebaseConfig);
-const db = firebaseApp.firestore();
+firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
+const db = firebase.firestore();
 
 export { auth, db };
 
