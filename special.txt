@@ -3,5 +3,16 @@
 
  - 로그인할때 입력하고 바로 Enter 키로 이동 가능한 기능
 
+
+ firebase firestore으로 데이터 올릴때 주의 사항
+
+- db.collection("").add() -> 자동 아이디
+
+-db.collection("").doc("").set() -> 미리 이름 정하기
+
+.add == .doc().set()
+
+
+**20시간 동안 고생해서 찾았음. firebase 데이터 올리고 싶을때 form 테그를 사용하면 안 돌아감. div으로 바꿔서 씀
  
 

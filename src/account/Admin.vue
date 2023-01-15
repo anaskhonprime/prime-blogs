@@ -7,6 +7,7 @@
       >
         <div class="flex flex-col justify-between h-screen bg-white border-r">
           <div class="px-4 mt-10 py-3">
+            
             <router-link to="/" class="flex items-center">
               <img src="../images/main.png" class="h-7 mr-3 sm:h-9" />
               <span
@@ -15,8 +16,7 @@
               >
             </router-link>
 
-            <nav class="flex flex-col mt-10 space-y-1">
-             
+            <nav class="flex flex-col mt-10 space-y-2">
               <router-link
                 to="/admin"
                 class="flex items-center px-4 py-2 text-gray-700 bg-gray-100 rounded-lg"
@@ -41,7 +41,7 @@
                   />
                 </svg>
 
-                <span class="ml-3 text-sm font-medium"> General </span>
+                <span class="ml-3 text-md font-medium"> General </span>
               </router-link>
 
               <details class="group">
@@ -63,7 +63,7 @@
                     />
                   </svg>
 
-                  <span class="ml-3 text-sm font-medium"> User Info </span>
+                  <span class="ml-3 text-md font-medium"> User Info </span>
 
                   <span
                     class="ml-auto transition duration-300 shrink-0 group-open:-rotate-180"
@@ -103,7 +103,7 @@
                       />
                     </svg>
 
-                    <span class="ml-3 text-sm font-medium"> Users Info </span>
+                    <span class="ml-3 text-md font-medium"> Users Info </span>
                   </router-link>
 
                   <router-link
@@ -125,7 +125,7 @@
                       />
                     </svg>
 
-                    <span class="ml-3 text-sm font-medium"> Activity </span>
+                    <span class="ml-3 text-md font-medium"> Activity </span>
                   </router-link>
                 </nav>
               </details>
@@ -149,7 +149,29 @@
                   />
                 </svg>
 
-                <span class="ml-3 text-sm font-medium"> Drafts </span>
+                <span class="ml-3 text-md font-medium"> Drafts </span>
+              </router-link>
+
+              <router-link
+                to="/admin/upload"
+                class="flex items-center px-4 py-2 text-gray-500 rounded-lg hover:bg-gray-100 hover:text-gray-700"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-5 h-5 opacity-75"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.752 3.752 0 0118 19.5H6.75z"
+                  ></path>
+                </svg>
+
+                <span class="ml-3 text-md font-medium"> Upload </span>
               </router-link>
 
               <details class="group">
@@ -171,7 +193,7 @@
                     ></path>
                   </svg>
 
-                  <span class="ml-3 text-sm font-medium"> Actions </span>
+                  <span class="ml-3 text-md  font-medium"> Actions </span>
 
                   <span
                     class="ml-auto transition duration-300 shrink-0 group-open:-rotate-180"
@@ -212,7 +234,7 @@
                       />
                     </svg>
 
-                    <span class="ml-3 text-sm font-medium"> Overview </span>
+                    <span class="ml-3 text-md  font-medium"> Overview </span>
                   </router-link>
 
                   <router-link
@@ -235,7 +257,7 @@
                       />
                     </svg>
 
-                    <span class="ml-3 text-sm font-medium"> Blog Center </span>
+                    <span class="ml-3 text-md  font-medium"> Blog Center </span>
                   </router-link>
 
                   <router-link
@@ -257,7 +279,7 @@
                       />
                     </svg>
 
-                    <span class="ml-3 text-sm font-medium"> Display </span>
+                    <span class="ml-3 text-md  font-medium"> Display </span>
                   </router-link>
 
                   <form action="/logout">
@@ -280,7 +302,7 @@
                         />
                       </svg>
 
-                      <span class="ml-3 text-sm font-medium"> Logout </span>
+                      <span class="ml-3 text-md  font-medium"> Logout </span>
                     </button>
                   </form>
                 </nav>
@@ -288,13 +310,7 @@
             </nav>
           </div>
 
-     
-          
           <div class="sticky inset-x-0 bottom-0 border-t border-gray-300">
-           
-              
-              
-            
             <div class="px-8 border-t border-gray-300">
               <ul class="w-full flex items-center justify-between bg-white">
                 <li class="cursor-pointer text-gray-500 pt-5 pb-3">
@@ -347,7 +363,7 @@
         </div>
       </div>
 
-      <router-view/>      
+      <router-view />
     </div>
   </div>
 </template>
