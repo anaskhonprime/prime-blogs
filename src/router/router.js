@@ -20,6 +20,9 @@ import Blogs from '../account/Blogs'
 import Drafts from '../account/Drafts'
 import Upload from '../account/Upload'
 
+import General from '../account/General'
+
+
 
 import UserDashboard from '../account/user/UserDashboard'
 
@@ -50,6 +53,11 @@ const routes = [{
                 path: 'overview',
                 name: 'overview',
                 component: Overview,
+            },
+            {
+                path: 'general',
+                name: 'general',
+                component: General,
             },
             {
                 path: 'upload',

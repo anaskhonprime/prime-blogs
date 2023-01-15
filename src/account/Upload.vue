@@ -3,7 +3,7 @@
       <div class="w-full">
 
         
-
+        //
         <div class="bg-green-600 pt-8 pb-16 relative z-10">
           <div
             class="container px-6 mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-between"
@@ -82,11 +82,15 @@
 </select>
 
 
-<label class="block mb-2 text-sm mt-4 font-medium text-gray-900 dark:text-white" for="file_input">Upload file</label>
+<!-- <label class="block mb-2 text-sm mt-4 font-medium text-gray-900 dark:text-white" for="file_input">Upload file</label>
 <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" id="file_input" type="file">
+ -->
 
-
-                    
+                   <div class="mb-6 mt-4">
+    <label  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Image Link</label>
+    <input v-model="img" type="text" class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+</div>
+ 
 
                     <div class="mb-6 mt-4">
     <label  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Intro Text</label>
@@ -145,10 +149,13 @@ export default {
     return {
 
       type : Categories,
-      category : "",
+
       writer: "Prime Blogs",
+      
+      category : "",
       title : "", 
       intro : "",
+      img : "",
       createdAt : null,
     }
   },
@@ -161,6 +168,7 @@ export default {
         author: "Prime Blogs",
         title: this.title,
         intro : this.intro,
+        image : this.img,
         category : this.category,
         createdAt: new Date(),
       }
@@ -173,9 +181,7 @@ export default {
  .catch((error) => {
     console.error("Error writing document: ", error);  
  });
-    },
-
-    
+    },    
     }    
 }
 </script>

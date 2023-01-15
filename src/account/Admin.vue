@@ -18,7 +18,7 @@
 
             <nav class="flex flex-col mt-10 space-y-2">
               <router-link
-                to="/admin"
+                to="/admin/general"
                 class="flex items-center px-4 py-2 text-gray-700 bg-gray-100 rounded-lg"
               >
                 <svg
@@ -363,13 +363,13 @@
         </div>
       </div>
 
-      <router-view />
+      <router-view/>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {};
 </script>
 
 <style></style>
