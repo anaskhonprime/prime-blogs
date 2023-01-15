@@ -1,28 +1,7 @@
 <template>
   <div class="flex">
-    <aside class="flex w-96 sticky left-0 top-0 h-full" aria-label="Sidebar">
-      <div class="max-w-24">
-        <button
-          data-collapse-toggle="categories"
-          type="button"
-          class="inline-flex items-center p-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-          aria-controls="categories"
-          aria-expanded="false"
-        >
-          <span class="sr-only">Open Categories</span>
-          <svg
-            aria-hidden="true"
-            class="flex-shrink-0 w-7 h-7 text-purple-400 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
-            ></path>
-          </svg>
-        </button>
-      </div>
+    <aside class="flex sticky left-0 top-0 h-full" aria-label="Sidebar">
+    
 
       <div class="hidden md:flex md:order-1" id="categories">
         <div
@@ -300,8 +279,8 @@
       </div>
     </aside>
 
-    <main class="">
-      <div class="hidden md:flex md:order-1 mt-6">
+    <main class="flex flex-col w-full m-2">
+      <div class="hidden md:flex items-center justify-center mt-6">
         <button
           id="dropdownDefaultButton"
           data-dropdown-toggle="dropdown"
@@ -400,7 +379,7 @@
         </button>
       </div>
 
-      <div class="container my-10 mr-3 pr-3 md:px-0">
+      <div class="container mx-auto px-4 py-5">
         <div
           href=""
           class="flex items-center p-2 text-2xl font-bold text-purple-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
@@ -423,59 +402,30 @@
           <span class="">All Blogs</span>
         </div>
 
-        <div class="flex flex-wrap max-w-6xl md:max-w-8xl -mx-1 lg:-mx-4">
-          <!-- Column -->
-          <div
-            v-for="a in 15"
-            class="my-1 px-1 md:w-1/2 md:max-w-8xl lg:my-4 lg:px-4 lg:w-1/3"
-          >
-            <!-- Article -->
-            <article class="overflow-hidden rounded-lg shadow-lg">
-              <a href="#">
-                <img
-                  alt="Placeholder"
-                  class="block h-auto w-full"
-                  src="https://picsum.photos/600/400/?random"
-                />
-              </a>
+        <div class="mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+         
+      <div class=" px-0 lg:px-5 mt-3 lg:mt-1" v-for="(a,i) in 10">   
+      <div class="rounded-lg overflow-hidden shadow-lg">
+      <img class="w-full" src="https://images.unsplash.com/photo-1529655683826-aba9b3e77383?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=701&h=500&q=80" alt="big ben and sunset">
+      <div class="px-6 py-4">
+        <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
+        <p class="text-gray-700 text-base">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus qui.
+        </p>
+      </div>
+      <div class="px-6 py-4">
+        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
+        
+      </div>
+    </div>
+    </div>
+    
+   
+   
+    
+    
+   
 
-              <header
-                class="flex items-center justify-between leading-tight p-2 md:p-4"
-              >
-                <h1 class="text-lg">
-                  <a class="no-underline hover:underline text-black" href="#">
-                    Article Title
-                  </a>
-                </h1>
-                <p class="text-grey-darker text-sm">11/1/19</p>
-              </header>
-
-              <footer
-                class="flex items-center justify-between leading-none p-2 md:p-4"
-              >
-                <a
-                  class="flex items-center no-underline hover:underline text-black"
-                  href="#"
-                >
-                  <img
-                    alt="Placeholder"
-                    class="block rounded-full"
-                    src="https://picsum.photos/32/32/?random"
-                  />
-                  <p class="ml-2 text-sm">Author Name</p>
-                </a>
-                <a
-                  class="no-underline text-grey-darker hover:text-red-dark"
-                  href="#"
-                >
-                  <span class="hidden">Like</span>
-                  <i class="fa fa-heart"></i>
-                </a>
-              </footer>
-            </article>
-            <!-- END Article -->
-          </div>
-          <!-- END Column -->
         </div>
 
         
