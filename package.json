@@ -14,6 +14,7 @@
     "firebase": "^8.10.1",
     "flowbite": "^1.6.0",
     "flowbite-vue": "^0.0.10",
+    "moment": "^2.29.4",
     "prettier": "^2.8.3",
     "vue": "^3.2.13",
     "vue-router": "^4.1.6",

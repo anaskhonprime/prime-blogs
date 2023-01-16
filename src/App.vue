@@ -1,17 +1,14 @@
 <template>
+
   <router-view :category ="category"></router-view>
+
 </template>
 
 <script>
 
-
-
 import firebase from "firebase/app";
 
-
 import Data from './data/categories.js';
-
-
 
 export default {
   name: 'App',

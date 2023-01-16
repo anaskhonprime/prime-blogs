@@ -1,7 +1,6 @@
 <template>
     <Navbar></Navbar>
-    <Sidebar/>
-     
+    <Sidebar/>    
 </template>
 
 <script>
@@ -11,25 +10,17 @@ import Footer from './Footer';
 import Sidebar from './Sidebar';
 import Box from './Box';
 
-
-
-
 export default {
-
     data() {
         return {
 
         }
     },
-
     components : {
         Navbar,Footer,Sidebar,Box
     },
-
     methods: {
-
     }
-
 }
 </script>
 

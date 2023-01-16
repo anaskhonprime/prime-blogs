@@ -1,10 +1,11 @@
+1.빠른 이동 
 
 @keyup.enter="login"
 
  - 로그인할때 입력하고 바로 Enter 키로 이동 가능한 기능
 
 
- firebase firestore으로 데이터 올릴때 주의 사항
+2. firebase firestore으로 데이터 올릴때 주의 사항
 
 - db.collection("").add() -> 자동 아이디
 
@@ -14,5 +15,46 @@
 
 
 **20시간 동안 고생해서 찾았음. firebase 데이터 올리고 싶을때 form 테그를 사용하면 안 돌아감. div으로 바꿔서 씀
+
+
+3.firebase firestore에서 데이터 공유 시간을 가지고 올때 일단 날짜 아니라 TimeStamp으로 불러오는데 우리가 익숙한 날짜로
+바꿔서 쓰는법 
+
+**개인적으로 2시간만에 해결한 문제임
+
+
+a) moment.js 설치 
+
+
+    - npm install moment.js
+
+
+b) 이용법, Product.vue 
+
+<script>
+
+import moment from 'moment'
+export default {
  
+methods: {    
+  dateTime(value) {
+      return moment(value).format("YYYY-MM-DD");
+    },
+    
+   },
+   
+   created: function () {
+    this.moment = moment;
+  },
+}
+
+</script>
+
+
+c) vue p 테크 안에 데이터 렌더링 같이 이용하기
+
+  <p>{{ dateTime(i.createdAt) }} </p>
+
+
+
 

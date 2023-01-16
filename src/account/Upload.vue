@@ -3,7 +3,6 @@
       <div class="w-full">
 
         
-        //
         <div class="bg-green-600 pt-8 pb-16 relative z-10">
           <div
             class="container px-6 mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-between"

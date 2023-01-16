@@ -8,6 +8,8 @@ import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
 
+
+
 const firebaseConfig = {
     apiKey: "AIzaSyDIdYii98QJzN2I9_LWaBn42WGwbuz3km8",
     authDomain: "vueblog-13514.firebaseapp.com",

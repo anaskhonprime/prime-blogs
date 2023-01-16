@@ -282,8 +282,7 @@
     <main class="flex flex-col w-full m-2">
       <div class="hidden md:flex items-center justify-center mt-6">
         <button
-          id="dropdownDefaultButton"
-          data-dropdown-toggle="dropdown"
+        @click="showAll"
           class="text-orange-900 mr-5 bg-orange-100 hover:bg-orange-200 focus:ring-4 focus:outline-none focus:ring-orange-200 font-medium rounded-lg text-md px-10 py-2.5 text-center inline-flex items-center dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-800"
           type="button"
         >
@@ -399,35 +398,40 @@
             ></path>
           </svg>
 
-          <span class="">All Blogs</span>
+          <span class="">Discover</span>
         </div>
 
-        <div class="mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      
+      <div class="mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
          
-      <div class=" px-0 lg:px-5 mt-3 lg:mt-1" v-for="(a,i) in 10">   
-      <div class="rounded-lg overflow-hidden shadow-lg">
-      <img class="w-full" src="https://images.unsplash.com/photo-1529655683826-aba9b3e77383?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=701&h=500&q=80" alt="big ben and sunset">
-      <div class="px-6 py-4">
-        <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
-        <p class="text-gray-700 text-base">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus qui.
-        </p>
-      </div>
-      <div class="px-6 py-4">
-        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
+      <div 
+       v-for="(a,i) in blogs" :key="blogs"
+
+      class=" px-0 lg:px-5 mt-3 lg:mt-1">  
+
+      <div class="h-96 rounded-lg overflow-hidden shadow-lg">
+      
+      <img class="object-cover h-48 w-96" :src="a.image" >
+
+
+      <div class="flex flex-col w-full align-left">
+        <div class="font-bold text-base m-3 p-1 h-12 ">{{a.title}}</div>
+        <p class="truncate text-gray-700  p-1 text-sm m-3" >
+        
+          {{a.intro}}</p>
+      
+        
+        <div class="flex flex-row text-gray-700 text-sm p-1 m-2">
+        <p class="" >        
+          {{dateTime(i.createdAt)}}</p>
+        <p>Hello</p>  
+        </div>
         
       </div>
     </div>
     </div>
-    
    
-   
-    
-    
-   
-
         </div>
-
         
       </div>
     </main>
@@ -437,15 +441,50 @@
 <script>
 import Categories from '../data/categories.js'
 
+import firebase from "firebase/app"; 
+import "firebase/firestore";
+import "firebase/auth";
+
+import moment from 'moment'
+
+import {db, auth} from '../main.js'
+
+
 export default {
   data () {
     return {
       category: Categories,
       discover: ['Trends', 'Recently', 'Popular', 'All Blogs'],
-      profile: ['Dashboard', 'Settings', 'Saved', 'History']
+      profile: ['Dashboard', 'Settings', 'Saved', 'History'],
+
+      blogs: [],
     }
   },
-  methods: {}
+
+  
+
+  methods: {    
+   
+   showAll(){
+      db.collection("blogs").get().then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+      
+      this.blogs.push(doc.data());
+      
+     });
+  });
+  },
+
+ dateTime(value) {
+      return moment(value).format("YYYY-MM-DD");
+    },
+    
+
+  },
+
+  created: function () {
+    this.moment = moment;
+  },
 }
 </script>
 
