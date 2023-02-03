@@ -330,7 +330,6 @@
         </button>
       </div>
 
-      
       <!-- <div class="container mx-auto px-4 py-5">
         <div
           href=""
@@ -436,85 +435,83 @@
         </div>
       </div> -->
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-
-        <div v-for="(a,i) in blogs" :key ="blogs">
-
-      <div class="flex justify-center items-center p-3 mt-1 rounded-t-xl bg-gray-50 ">
-  <div class="flex flex-col rounded-2xl shadow-xl max-w-sm">
-    <div class="flex-shrink-0">
-      <img class="h-48 w-full object-cover rounded-t-lg" :src="a.image" />
-    </div>
-    <div class="flex-1 bg-white p-6 flex flex-col justify-between">
-      <div class="flex-1">
-        <p class="text-sm  leading-5 font-medium text-teal-600">
-          <a href="#" class="hover:underline">
-            #{{a.category}}
-          </a>
-        </p>
-        <a href="#" class="block">
-          <h3 class="mt-2 text-lg font-semibold text-gray-900">
-            {{a.title}}
-          </h3>
-          <p class="text-ellipsis overflow-hidden h-12 mt-4 text-sm leading-6 text-gray-500">
-             {{a.intro}}</p>
-        </a>
-      </div>
-      <div class="mt-2">
-        <a class="text-teal-400 hover:text-teal-900 text-sm transition duration-150 ease-in-out" href="#">Read more
-          <svg class="chev inline-block ml-1 w-2 h-2 stroke-2 stroke-current" viewBox="0 0 10 10" fill="none" aria-hidden="true">
-            <g fill-rule="evenodd">
-              <path d="M1 1l4 4-4 4"></path>
-            </g>
-          </svg>
-          <svg class="arr hidden hover:inline-block ml-1 w-2 h-2 stroke-2 stroke-current" viewBox="0 0 10 10" fill="none" aria-hidden="true">
-            <g fill-rule="evenodd">
-              <path d="M0 5h7"></path>
-              <path d="M4 1l4 4-4 4"></path>
-            </g>
-          </svg>
-        </a>
-      </div>
-      <div class="mt-6 flex items-center">
-        
-        <div class="flex-shrink-0">
-          <a href="#">
-            <img class="h-10 w-10 rounded-full object-cover" src="../images/main.png" alt="" />
-          </a>
-        </div>
-        <div class="ml-3">
-          <p class="text-sm leading-5 font-medium text-gray-900">
-            <a href="#" class="hover:underline">
-              Prime Blogs
-            </a>
-          </p>
-          <div class="flex text-sm leading-5 text-gray-500">
-            <time datetime="2020-03-16">
-              {{ dateTime(i.createdAt) }}
-            </time>
-            
-           
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div v-for="(a, i) in blogs" :key="blogs">
+          <div
+            class="flex justify-center items-center p-3 mt-1 rounded-t-xl bg-gray-50">
+            <div class="flex flex-col rounded-2xl shadow-xl max-w-sm">
+              <div class="flex-shrink-0">
+                <img
+                  class="h-48 w-full object-cover rounded-t-lg"
+                  :src="a.image" />
+              </div>
+              <div class="flex-1 bg-white p-6 flex flex-col justify-between">
+                <div class="flex-1">
+                  <p class="text-sm leading-5 font-medium text-teal-600">
+                    <a href="#" class="hover:underline">#{{ a.category }}</a>
+                  </p>
+                  <a href="#" class="block">
+                    <h3 class="mt-2 text-lg h-12 font-semibold text-gray-900">
+                      {{ a.title }}
+                    </h3>
+                    <p
+                      class="text-ellipsis overflow-hidden h-12 mt-4 text-sm leading-6 text-gray-500">
+                      {{ a.intro }}
+                    </p>
+                  </a>
+                </div>
+                <div class="mt-2">
+                  <a
+                    class="text-teal-400 hover:text-teal-900 text-sm transition duration-150 ease-in-out"
+                    href="#">
+                    Read more
+                    <svg
+                      class="chev inline-block ml-1 w-2 h-2 stroke-2 stroke-current"
+                      viewBox="0 0 10 10"
+                      fill="none"
+                      aria-hidden="true">
+                      <g fill-rule="evenodd">
+                        <path d="M1 1l4 4-4 4"></path>
+                      </g>
+                    </svg>
+                    <svg
+                      class="arr hidden hover:inline-block ml-1 w-2 h-2 stroke-2 stroke-current"
+                      viewBox="0 0 10 10"
+                      fill="none"
+                      aria-hidden="true">
+                      <g fill-rule="evenodd">
+                        <path d="M0 5h7"></path>
+                        <path d="M4 1l4 4-4 4"></path>
+                      </g>
+                    </svg>
+                  </a>
+                </div>
+                <div class="mt-6 flex items-center">
+                  <div class="flex-shrink-0">
+                    <a href="#">
+                      <img
+                        class="h-10 w-10 rounded-full object-cover"
+                        src="../images/main.png"
+                        alt="" />
+                    </a>
+                  </div>
+                  <div class="ml-3">
+                    <p class="text-sm leading-5 font-medium text-gray-900">
+                      <a href="#" class="hover:underline">Prime Blogs</a>
+                    </p>
+                    <div class="flex text-sm leading-5 text-gray-500">
+                      <time datetime="2020-03-16">
+                        {{ dateTime(i.createdAt) }}
+                      </time>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-
       </div>
-    </div>
-  </div>
-</div>  
-        </div>
-      </div>
-
-
-
-
-
-
-
-
-
-
-
-
     </main>
   </div>
 </template>
